@@ -9,6 +9,7 @@
  */
 
 define('base_url', 'http://localhost/binuli.ge');
+define('MAIN_CONTROLLER', 'main');
 $db_name="dzravi";
 $db_user="root";
 $db_host="localhost";
