@@ -9,6 +9,6 @@
  */
  ?>
 </div>
-<div class ="Footer"><?php echo lText('Footer'); ?></div>
+<div class ="Footer"><?php //echo lText('Footer'); ?></div>
 </body>
 </html>

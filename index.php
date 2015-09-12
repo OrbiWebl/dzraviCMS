@@ -7,14 +7,15 @@
  * @for company: binuli @website: binuli.ge
  */
 
-include_once 'includes/inc.php';
+include_once 'lib/config.php';
+define('PATH_ROOT',  __DIR__);
+define('PATH_FRAMEWORK',  __DIR__.'/framework');
+//include_once 'includes/inc.php';
 include_once 'includes/db.php';
-include_once 'includes/functions.php';
-include_once 'includes/header.php';
-include_once 'forforms.php';
-?>
-<div class="IndexMain_block">
-    <?php
+//include_once 'includes/functions.php';
+//include_once 'includes/header.php';
+//include_once 'forforms.php';
+
 //pages genereted system
 
 
@@ -27,7 +28,7 @@ include_once 'forforms.php';
     
     $fac = new WLfactory;
     $fac ->getPage($page, $method);
-
+    
     /*
     //create form action system
     if (!empty($_POST) && is_array($_POST) && !empty($_POST['task'])){
@@ -42,8 +43,3 @@ include_once 'forforms.php';
      * 
      */
 
-    
-    ?>
-</div>
-<?php
-include_once 'includes/footer.php';
