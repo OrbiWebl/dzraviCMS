@@ -18,22 +18,17 @@ include_once 'forforms.php';
 //pages genereted system
 
 
-    $page = isset($_GET['mp']) ? $_GET['mp'] : 'main';
+    $page = isset($_GET['mp']) ? $_GET['mp'] : '';
 
-    if (file_exists('pages/' . $page . '.php')) {
-        if ($page != 'main'){
-            include_once 'pages/mysql/main.php';
-        }
-        if (file_exists('pages/mysql/' . $page . '.php')) {
-            include_once 'pages/mysql/' . $page . '.php';
-        }else{
-            
-        }
-        include_once 'pages/' . $page . '.php';
-    } else {
-        include_once 'pages/error.php';
-    }
+    $method = isset($_GET['mt']) ? $_GET['mt'] : '';
     
+    
+    require 'framework/factory.php';
+    
+    $fac = new WLfactory;
+    $fac ->getPage($page, $method);
+
+    /*
     //create form action system
     if (!empty($_POST) && is_array($_POST) && !empty($_POST['task'])){
        $form = new ForForms;
@@ -44,6 +39,8 @@ include_once 'forforms.php';
         echo sendError($error);   
        }
     }
+     * 
+     */
 
     
     ?>
