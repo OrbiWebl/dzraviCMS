@@ -1,21 +1,22 @@
 <?php
 
-class WL_Controller extends WLfactory {
+class WL_Controller extends WLfactory  {
 
     public $ClassName;
 
     public function __construct() {
         $this->ClassName = get_called_class();
     }
-
+    
     public function WDB() {
         return $this->getDBL();
     }
 
     public function getView($view = '', $data = '') {
-        if (!$view) {
+        if(!$view){
             $view = $this->ClassName;
         }
+        
         if (!$view) {
             echo 'View Not Found';
             return false;
@@ -38,7 +39,7 @@ class WL_Controller extends WLfactory {
             return false;
         }
 
-        require PATH_FRAMEWORK . '/models/' . $model . '.php';
+        require_once PATH_FRAMEWORK . '/models/' . $model . '.php';
         $M = new $modelC();
 
         return $M;

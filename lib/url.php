@@ -8,8 +8,22 @@
  * @for company: binuli @website: binuli.ge
  */
 
-function getLink($link){
-    
-    
-    return $link;
+abstract class wlroot {
+
+    public static function _($link){
+        return $link;
+    }
+    public static function redirect($url, $statusCode = 303) {
+        if (headers_sent()) {
+            ?>
+              <script>
+                window.location.assign("<?php echo $url; ?>");
+              </script>
+            <?php
+
+        } else {
+            header('Location: ' . $url, true, $statusCode);
+        }
+    }
+
 }

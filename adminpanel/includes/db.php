@@ -8,6 +8,6 @@
  * @for company: binuli @website: binuli.ge
  */
 
-mysql_connect("$db_host", "$db_user", "$db_pass") or die(mysql_error());
-mysql_select_db("$db_name") or die(mysql_error());
- mysql_query('SET NAMES utf8');
+$DBL = mysqli_connect("$db_host", "$db_user", "$db_pass", "$db_name") or die(mysql_error());
+mysqli_set_charset( $DBL,'SET NAMES utf8');
+define('DBL',$DBL);

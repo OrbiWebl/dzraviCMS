@@ -8,7 +8,7 @@ session_start();
  * @for company: binuli @website: binuli.ge
  */
 
-foreach (glob("../lib/*.php") as $filename) {
+foreach (glob("lib/*.php") as $filename) {
     require_once $filename;
 }
 

@@ -8,6 +8,7 @@
  * @for company: binuli @website: binuli.ge
  */
  ?>
-<div class ="Footer"><?php echo lText('Footer'); ?></div>
+</div>
+<div class ="Footer"><?php //echo lText('Footer'); ?></div>
 </body>
 </html>

@@ -43,9 +43,3 @@ function insert($sql){
     return $ins;
 }
 
-function delete($sql){
-    $del = mysql_query($sql) or die(mysql_error());
-    return $del;
-}
-
-$time = time();
